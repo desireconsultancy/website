@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'FSSAI Licensing Consultancy',
+  name: 'Trademark Registration Consultancy',
   description:
-    'Expert FSSAI licensing assistance for food businesses — new licenses, renewals, state and central licenses, and complete compliance support across India.',
+    'Protect your brand name, logo, and slogans with expert Trademark Registration consultancy. Brand search, filing, opposition handling, and renewals across India.',
   provider: {
     '@type': 'LocalBusiness',
     name: 'Desire Consultancy',
@@ -20,27 +20,27 @@ const schema = {
     },
   },
   areaServed: { '@type': 'Country', name: 'India' },
-  url: 'https://desireconsultancy.in/services/fssai',
+  url: 'https://desireconsultancy.in/trademark-registration',
 };
 
-export function FSSAIPage() {
+export function TrademarkPage() {
   return (
     <>
       <Helmet>
-        <title>FSSAI Licensing Consultancy | Desire Consultancy — Nagpur</title>
+        <title>Trademark Registration Consultancy | Desire Consultancy — Nagpur</title>
         <meta
           name="description"
-          content="Expert FSSAI licensing consultancy in Nagpur. We assist food businesses with new FSSAI registrations, state & central licenses, renewals, and modifications across India."
+          content="Expert Trademark Registration consultancy in Nagpur. Safeguard your brand identity, logo, and trademark filings with complete compliance support across India."
         />
         <meta
           name="keywords"
-          content="FSSAI licensing Nagpur, FSSAI registration Maharashtra, food license consultancy, FSSAI renewal, central FSSAI license India"
+          content="Trademark registration Nagpur, brand name protection India, logo trademark Maharashtra, trademark filing consultancy, intellectual property support"
         />
-        <link rel="canonical" href="https://desireconsultancy.in/services/fssai" />
+        <link rel="canonical" href="https://desireconsultancy.in/trademark-registration" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://desireconsultancy.in/services/fssai" />
-        <meta property="og:title" content="FSSAI Licensing Consultancy | Desire Consultancy" />
-        <meta property="og:description" content="Expert FSSAI licensing assistance across India — registrations, state & central licenses, renewals." />
+        <meta property="og:url" content="https://desireconsultancy.in/trademark-registration" />
+        <meta property="og:title" content="Trademark Registration Consultancy | Desire Consultancy" />
+        <meta property="og:description" content="Safeguard your brand identity and secure trademark filings across India." />
         <meta property="og:image" content="https://desireconsultancy.in/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
@@ -51,35 +51,32 @@ export function FSSAIPage() {
           <nav className="text-[10px] font-mono text-white/30 tracking-wider mb-12" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-[#16D9C5] transition-colors">Home</Link>
             <span className="mx-2">/</span>
-            <span className="text-white/60">FSSAI Licensing</span>
+            <span className="text-white/60">Trademark Registration</span>
           </nav>
 
-          {/* Header */}
           <span className="text-[10px] tracking-[0.3em] text-[#16D9C5] font-mono font-medium uppercase mb-4 block">
-            REGULATORY COMPLIANCE
+            INTELLECTUAL PROPERTY
           </span>
           <h1 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-white uppercase leading-[1.1] mb-6">
-            FSSAI Licensing
+            Trademark
             <br />
             <span className="bg-gradient-to-r from-[#0E6EFF] to-[#16D9C5] bg-clip-text text-transparent">
-              Consultancy
+              Registration
             </span>
           </h1>
           <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-2xl mb-12">
-            The Food Safety and Standards Authority of India (FSSAI) mandates that every food business
-            operating in India must have a valid license or registration. At Desire Consultancy, we
-            simplify this complex process for you — from initial assessment to final approval.
+            Your brand name, logo, and slogans are valuable business assets. Securing a registered trademark
+            prevents unauthorized copying and establishes exclusive brand ownership. Desire Consultancy
+            assists you throughout the research, filing, and compliance phases of trademark registration.
           </p>
 
-          {/* Services covered */}
+          {/* Trademark flow */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
             {[
-              { title: 'FSSAI Basic Registration', desc: 'For small food businesses with turnover up to ₹12 lakh/year.' },
-              { title: 'State FSSAI License', desc: 'For medium-sized businesses operating within a single state.' },
-              { title: 'Central FSSAI License', desc: 'For large businesses, importers/exporters, and pan-India operators.' },
-              { title: 'FSSAI Renewal', desc: 'Timely license renewals to avoid penalties and business disruption.' },
-              { title: 'Modification & Transfer', desc: 'Changes to premises, product category, or ownership details.' },
-              { title: 'Compliance Audit', desc: 'Pre-inspection audits and documentation reviews.' },
+              { title: 'Brand Search & Feasibility', desc: 'Comprehensive search across classification databases to check trademark availability.' },
+              { title: 'Trademark Filing & Application', desc: 'Preparing and submitting your trademark applications in the correct classes.' },
+              { title: 'Hearing & Reply to Examination', desc: 'Drafting professional replies to government examination reports and handling hearings.' },
+              { title: 'Trademark Renewal', desc: 'Securing continued brand protection with timely 10-year renewal filings.' },
             ].map((item) => (
               <div
                 key={item.title}
@@ -91,7 +88,7 @@ export function FSSAIPage() {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* Contact CTA */}
           <div className="border-t border-white/5 pt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <Link
               to="/#contact"
@@ -104,18 +101,9 @@ export function FSSAIPage() {
               <div>📧 <a href="mailto:desireconsultancy37@gmail.com" className="hover:text-[#16D9C5] transition-colors">desireconsultancy37@gmail.com</a></div>
             </div>
           </div>
-
-          {/* Internal links */}
-          <div className="mt-16 pt-12 border-t border-white/5">
-            <p className="text-[10px] tracking-widest text-white/30 font-mono uppercase mb-4">Explore Other Services</p>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/services/bis-certification" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">BIS Certification →</Link>
-              <Link to="/services/packaged-drinking-water" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">Packaged Water Plants →</Link>
-              <Link to="/services/ro-solutions" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">Industrial RO Solutions →</Link>
-            </div>
-          </div>
         </div>
       </div>
     </>
   );
 }
+export default TrademarkPage;

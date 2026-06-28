@@ -12,7 +12,7 @@ const schema = {
     address: { '@type': 'PostalAddress', addressLocality: 'Nagpur', addressRegion: 'Maharashtra', addressCountry: 'IN' },
   },
   areaServed: { '@type': 'Country', name: 'India' },
-  url: 'https://desireconsultancy.com/services/ro-solutions',
+  url: 'https://desireconsultancy.in/services/ro-solutions',
 };
 
 export function ROSolutionsPage() {
@@ -22,11 +22,11 @@ export function ROSolutionsPage() {
         <title>Industrial RO Solutions Consultancy | Desire Consultancy — Nagpur</title>
         <meta name="description" content="Expert industrial RO water treatment consultancy in Nagpur. We assist businesses with compliance, certifications, and regulatory approvals for commercial and industrial RO systems." />
         <meta name="keywords" content="industrial RO solutions Nagpur, RO water treatment consultancy Maharashtra, commercial RO compliance India, water treatment regulatory approval" />
-        <link rel="canonical" href="https://desireconsultancy.com/services/ro-solutions" />
-        <meta property="og:url" content="https://desireconsultancy.com/services/ro-solutions" />
+        <link rel="canonical" href="https://desireconsultancy.in/services/ro-solutions" />
+        <meta property="og:url" content="https://desireconsultancy.in/services/ro-solutions" />
         <meta property="og:title" content="Industrial RO Solutions Consultancy | Desire Consultancy" />
         <meta property="og:description" content="Compliance and regulatory guidance for commercial and industrial RO water treatment systems." />
-        <meta property="og:image" content="https://desireconsultancy.com/og-image.jpg" />
+        <meta property="og:image" content="https://desireconsultancy.in/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

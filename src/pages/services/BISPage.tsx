@@ -20,7 +20,7 @@ const schema = {
     },
   },
   areaServed: { '@type': 'Country', name: 'India' },
-  url: 'https://desireconsultancy.com/services/bis-certification',
+  url: 'https://desireconsultancy.in/services/bis-certification',
 };
 
 export function BISPage() {
@@ -36,12 +36,12 @@ export function BISPage() {
           name="keywords"
           content="BIS certification Nagpur, ISI mark license, Bureau of Indian Standards, BIS product certification Maharashtra, BIS factory audit India"
         />
-        <link rel="canonical" href="https://desireconsultancy.com/services/bis-certification" />
+        <link rel="canonical" href="https://desireconsultancy.in/services/bis-certification" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://desireconsultancy.com/services/bis-certification" />
+        <meta property="og:url" content="https://desireconsultancy.in/services/bis-certification" />
         <meta property="og:title" content="BIS Certification Consultancy | Desire Consultancy" />
         <meta property="og:description" content="Complete BIS certification support — ISI mark, documentation, factory audits, lab coordination." />
-        <meta property="og:image" content="https://desireconsultancy.com/og-image.jpg" />
+        <meta property="og:image" content="https://desireconsultancy.in/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

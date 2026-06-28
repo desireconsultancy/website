@@ -12,7 +12,7 @@ const schema = {
     address: { '@type': 'PostalAddress', addressLocality: 'Nagpur', addressRegion: 'Maharashtra', addressCountry: 'IN' },
   },
   areaServed: { '@type': 'Country', name: 'India' },
-  url: 'https://desireconsultancy.com/services/packaged-drinking-water',
+  url: 'https://desireconsultancy.in/services/packaged-drinking-water',
 };
 
 export function PackagedWaterPage() {
@@ -22,11 +22,11 @@ export function PackagedWaterPage() {
         <title>Packaged Drinking Water Plant Consultancy | Desire Consultancy — Nagpur</title>
         <meta name="description" content="Expert consultancy for packaged drinking water plants — BIS IS 14543 certification, FSSAI licensing, ISI mark, plant layout, and full compliance support across India." />
         <meta name="keywords" content="packaged drinking water plant consultancy Nagpur, BIS IS 14543, mineral water plant Maharashtra, water bottling plant compliance India" />
-        <link rel="canonical" href="https://desireconsultancy.com/services/packaged-drinking-water" />
-        <meta property="og:url" content="https://desireconsultancy.com/services/packaged-drinking-water" />
+        <link rel="canonical" href="https://desireconsultancy.in/services/packaged-drinking-water" />
+        <meta property="og:url" content="https://desireconsultancy.in/services/packaged-drinking-water" />
         <meta property="og:title" content="Packaged Drinking Water Plant Consultancy | Desire Consultancy" />
         <meta property="og:description" content="End-to-end consultancy for packaged drinking water plants — BIS, FSSAI, ISI mark." />
-        <meta property="og:image" content="https://desireconsultancy.com/og-image.jpg" />
+        <meta property="og:image" content="https://desireconsultancy.in/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

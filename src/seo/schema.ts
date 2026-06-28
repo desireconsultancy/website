@@ -5,11 +5,11 @@
 export const getOrganizationSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  '@id': 'https://desireconsultancy.com/#organization',
+  '@id': 'https://desireconsultancy.in/#organization',
   'name': 'Desire Consultancy',
-  'url': 'https://desireconsultancy.com',
-  'logo': 'https://desireconsultancy.com/logo.png',
-  'image': 'https://desireconsultancy.com/og-image.jpg',
+  'url': 'https://desireconsultancy.in',
+  'logo': 'https://desireconsultancy.in/logo.png',
+  'image': 'https://desireconsultancy.in/og-image.jpg',
   'description': 'Expert compliance and regulatory consultancy helping businesses with FSSAI licensing, BIS certification, packaged drinking water plants, and industrial RO solutions across India.',
   'address': {
     '@type': 'PostalAddress',
@@ -45,10 +45,10 @@ export const getOrganizationSchema = () => ({
 export const getLocalBusinessSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://desireconsultancy.com/#localbusiness',
+  '@id': 'https://desireconsultancy.in/#localbusiness',
   'name': 'Desire Consultancy',
   'description': 'FSSAI licensing, BIS certification, packaged drinking water plant consultancy, and RO compliance experts based in Nagpur, Maharashtra.',
-  'url': 'https://desireconsultancy.com',
+  'url': 'https://desireconsultancy.in',
   'telephone': '+918421504028',
   'email': 'desireconsultancy37@gmail.com',
   'address': {
@@ -87,7 +87,7 @@ export const getServiceSchema = () => ({
       'item': {
         '@type': 'Service',
         'name': 'FSSAI Licensing',
-        'url': 'https://desireconsultancy.com/services/fssai',
+        'url': 'https://desireconsultancy.in/services/fssai',
         'description': 'Expert assistance with new licenses, renewals, modifications, state and central FSSAI licenses.',
         'provider': { '@type': 'LocalBusiness', 'name': 'Desire Consultancy' },
       },
@@ -98,7 +98,7 @@ export const getServiceSchema = () => ({
       'item': {
         '@type': 'Service',
         'name': 'BIS Certification',
-        'url': 'https://desireconsultancy.com/services/bis-certification',
+        'url': 'https://desireconsultancy.in/services/bis-certification',
         'description': 'Support for Bureau of Indian Standards (BIS) certification, compliance audits, documentation, and product approvals.',
         'provider': { '@type': 'LocalBusiness', 'name': 'Desire Consultancy' },
       },
@@ -109,7 +109,7 @@ export const getServiceSchema = () => ({
       'item': {
         '@type': 'Service',
         'name': 'Packaged Drinking Water Plants',
-        'url': 'https://desireconsultancy.com/services/packaged-drinking-water',
+        'url': 'https://desireconsultancy.in/services/packaged-drinking-water',
         'description': 'Comprehensive consultancy for setting up packaged drinking water units including regulatory approvals, layouts, and audits.',
         'provider': { '@type': 'LocalBusiness', 'name': 'Desire Consultancy' },
       },
@@ -120,7 +120,7 @@ export const getServiceSchema = () => ({
       'item': {
         '@type': 'Service',
         'name': 'Industrial RO Solutions',
-        'url': 'https://desireconsultancy.com/services/ro-solutions',
+        'url': 'https://desireconsultancy.in/services/ro-solutions',
         'description': 'Consultancy and compliance guidance for commercial and industrial reverse osmosis (RO) water treatment systems.',
         'provider': { '@type': 'LocalBusiness', 'name': 'Desire Consultancy' },
       },
@@ -132,7 +132,7 @@ export const getServiceSchema = () => ({
 export const getBreadcrumbSchema = (items?: { name: string; url: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  'itemListElement': (items ?? [{ name: 'Home', url: 'https://desireconsultancy.com' }]).map(
+  'itemListElement': (items ?? [{ name: 'Home', url: 'https://desireconsultancy.in' }]).map(
     (item, i) => ({
       '@type': 'ListItem',
       'position': i + 1,

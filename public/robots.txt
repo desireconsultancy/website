@@ -1,5 +1,22 @@
+# robots.txt for https://desireconsultancy.in
 User-agent: *
 Allow: /
-Disallow: /admin/
+Allow: /images/
+Allow: /assets/
+Allow: /services/
+Allow: /blogs/
+Allow: /about
+Allow: /contact
+Allow: /career
+Allow: /privacy-policy
+Allow: /terms-and-conditions
 
-Sitemap: https://desireconsultancy.com/sitemap.xml
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /test/
+
+Sitemap: https://desireconsultancy.in/sitemap.xml
+Host: https://desireconsultancy.in

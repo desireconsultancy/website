@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { trackPageView } from '../lib/analytics/ga4';
@@ -19,6 +19,18 @@ const PackagedWaterPage = lazy(() =>
 );
 const ROSolutionsPage = lazy(() =>
   import('../pages/services/ROSolutionsPage').then((m) => ({ default: m.ROSolutionsPage })),
+);
+const PrivacyPolicyPage = lazy(() =>
+  import('../pages/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage })),
+);
+const TermsPage = lazy(() =>
+  import('../pages/TermsPage').then((m) => ({ default: m.TermsPage })),
+);
+const BlogPage = lazy(() =>
+  import('../pages/BlogPage').then((m) => ({ default: m.BlogPage })),
+);
+const TrademarkPage = lazy(() =>
+  import('../pages/TrademarkPage').then((m) => ({ default: m.TrademarkPage })),
 );
 
 /** Track SPA page views on each route change */
@@ -49,6 +61,22 @@ export function AppRouter() {
             <Route path="/services/bis-certification" element={<BISPage />} />
             <Route path="/services/packaged-drinking-water" element={<PackagedWaterPage />} />
             <Route path="/services/ro-solutions" element={<ROSolutionsPage />} />
+            
+            {/* New Pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-and-conditions" element={<TermsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPage />} />
+            <Route path="/trademark-registration" element={<TrademarkPage />} />
+            
+            {/* Redirects for clean SEO canonicalization */}
+            <Route path="/fssai-certification" element={<Navigate to="/services/fssai" replace />} />
+            <Route path="/bis-certification" element={<Navigate to="/services/bis-certification" replace />} />
+            <Route path="/consultancy" element={<Navigate to="/" replace />} />
+            <Route path="/about" element={<Navigate to="/#about" replace />} />
+            <Route path="/services" element={<Navigate to="/#services" replace />} />
+            <Route path="/contact" element={<Navigate to="/#contact" replace />} />
+
             {/* 404 fallback */}
             <Route path="*" element={<App />} />
           </Routes>
@@ -57,3 +85,4 @@ export function AppRouter() {
     </HelmetProvider>
   );
 }
+

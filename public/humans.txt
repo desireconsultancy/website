@@ -1,0 +1,18 @@
+/* TEAM */
+Founder & Lead Consultant: Yashlok Singh
+Organisation: Desire Consultancy
+Location: Nagpur, Maharashtra, India
+Website: https://desireconsultancy.in
+Contact: desireconsultancy37@gmail.com
+
+/* THANKS */
+Google DeepMind Antigravity Pair Programmers
+Our valued clients across PAN India
+
+/* TECHNOLOGY COLOPHON */
+HTML5, CSS3
+React 19, TypeScript, Vite
+GSAP (Animation library), Three.js (WebGL 3D Logo rendering)
+Lenis Smooth Scroll
+Supabase (Database, Edge Functions)
+Tailwind CSS

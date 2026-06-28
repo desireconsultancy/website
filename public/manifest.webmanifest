@@ -1,0 +1,21 @@
+{
+  "short_name": "Desire",
+  "name": "Desire Consultancy",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#16D9C5",
+  "display": "standalone",
+  "orientation": "portrait"
+}
