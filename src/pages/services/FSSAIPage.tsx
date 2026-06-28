@@ -20,7 +20,7 @@ const schema = {
     },
   },
   areaServed: { '@type': 'Country', name: 'India' },
-  url: 'https://desireconsultancy.in/services/fssai',
+  url: 'https://desireconsultancy.in/fssai-certification',
 };
 
 export function FSSAIPage() {
@@ -36,9 +36,9 @@ export function FSSAIPage() {
           name="keywords"
           content="FSSAI licensing Nagpur, FSSAI registration Maharashtra, food license consultancy, FSSAI renewal, central FSSAI license India"
         />
-        <link rel="canonical" href="https://desireconsultancy.in/services/fssai" />
+        <link rel="canonical" href="https://desireconsultancy.in/fssai-certification" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://desireconsultancy.in/services/fssai" />
+        <meta property="og:url" content="https://desireconsultancy.in/fssai-certification" />
         <meta property="og:title" content="FSSAI Licensing Consultancy | Desire Consultancy" />
         <meta property="og:description" content="Expert FSSAI licensing assistance across India — registrations, state & central licenses, renewals." />
         <meta property="og:image" content="https://desireconsultancy.in/og-image.jpg" />
@@ -109,7 +109,7 @@ export function FSSAIPage() {
           <div className="mt-16 pt-12 border-t border-white/5">
             <p className="text-[10px] tracking-widest text-white/30 font-mono uppercase mb-4">Explore Other Services</p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/services/bis-certification" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">BIS Certification →</Link>
+              <Link to="/bis-certification" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">BIS Certification →</Link>
               <Link to="/services/packaged-drinking-water" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">Packaged Water Plants →</Link>
               <Link to="/services/ro-solutions" className="text-xs text-white/50 hover:text-[#16D9C5] font-mono transition-colors">Industrial RO Solutions →</Link>
             </div>

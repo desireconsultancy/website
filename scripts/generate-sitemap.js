@@ -14,8 +14,8 @@ const DIST_DIR = path.join(rootDir, 'dist');
 // Define static pages and their priorities/change frequencies
 const pages = [
   { path: '/', priority: '1.0', changefreq: 'daily' },
-  { path: '/services/fssai', priority: '0.9', changefreq: 'weekly' },
-  { path: '/services/bis-certification', priority: '0.9', changefreq: 'weekly' },
+  { path: '/fssai-certification', priority: '0.9', changefreq: 'weekly' },
+  { path: '/bis-certification', priority: '0.9', changefreq: 'weekly' },
   { path: '/services/packaged-drinking-water', priority: '0.9', changefreq: 'weekly' },
   { path: '/services/ro-solutions', priority: '0.9', changefreq: 'weekly' },
   { path: '/trademark-registration', priority: '0.9', changefreq: 'weekly' },

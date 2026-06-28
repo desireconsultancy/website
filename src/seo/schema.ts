@@ -87,7 +87,7 @@ export const getServiceSchema = () => ({
       'item': {
         '@type': 'Service',
         'name': 'FSSAI Licensing',
-        'url': 'https://desireconsultancy.in/services/fssai',
+        'url': 'https://desireconsultancy.in/fssai-certification',
         'description': 'Expert assistance with new licenses, renewals, modifications, state and central FSSAI licenses.',
         'provider': { '@type': 'LocalBusiness', 'name': 'Desire Consultancy' },
       },
@@ -98,7 +98,7 @@ export const getServiceSchema = () => ({
       'item': {
         '@type': 'Service',
         'name': 'BIS Certification',
-        'url': 'https://desireconsultancy.in/services/bis-certification',
+        'url': 'https://desireconsultancy.in/bis-certification',
         'description': 'Support for Bureau of Indian Standards (BIS) certification, compliance audits, documentation, and product approvals.',
         'provider': { '@type': 'LocalBusiness', 'name': 'Desire Consultancy' },
       },

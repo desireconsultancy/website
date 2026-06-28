@@ -57,8 +57,8 @@ export function AppRouter() {
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/admin/leads" element={<LeadsDashboard />} />
-            <Route path="/services/fssai" element={<FSSAIPage />} />
-            <Route path="/services/bis-certification" element={<BISPage />} />
+            <Route path="/fssai-certification" element={<FSSAIPage />} />
+            <Route path="/bis-certification" element={<BISPage />} />
             <Route path="/services/packaged-drinking-water" element={<PackagedWaterPage />} />
             <Route path="/services/ro-solutions" element={<ROSolutionsPage />} />
             
@@ -70,8 +70,8 @@ export function AppRouter() {
             <Route path="/trademark-registration" element={<TrademarkPage />} />
             
             {/* Redirects for clean SEO canonicalization */}
-            <Route path="/fssai-certification" element={<Navigate to="/services/fssai" replace />} />
-            <Route path="/bis-certification" element={<Navigate to="/services/bis-certification" replace />} />
+            <Route path="/services/fssai" element={<Navigate to="/fssai-certification" replace />} />
+            <Route path="/services/bis-certification" element={<Navigate to="/bis-certification" replace />} />
             <Route path="/consultancy" element={<Navigate to="/" replace />} />
             <Route path="/about" element={<Navigate to="/#about" replace />} />
             <Route path="/services" element={<Navigate to="/#services" replace />} />
