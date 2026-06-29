@@ -8,7 +8,7 @@ export const getOrganizationSchema = () => ({
   '@id': 'https://desireconsultancy.in/#organization',
   'name': 'Desire Consultancy',
   'url': 'https://desireconsultancy.in',
-  'logo': 'https://desireconsultancy.in/logo.png',
+  'logo': 'https://desireconsultancy.in/logo.webp',
   'image': 'https://desireconsultancy.in/og-image.jpg',
   'description': 'Expert compliance and regulatory consultancy helping businesses with FSSAI licensing, BIS certification, packaged drinking water plants, and industrial RO solutions across India.',
   'address': {

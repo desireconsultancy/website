@@ -8,8 +8,8 @@
       "sizes": "any"
     },
     {
-      "src": "/logo.png",
-      "type": "image/png",
+      "src": "/logo.webp",
+      "type": "image/webp",
       "sizes": "512x512"
     }
   ],

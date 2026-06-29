@@ -73,7 +73,7 @@ export function FounderSection() {
             {/* Image frame */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10">
               <img
-                src="/founder.png"
+                src="/founder.webp"
                 alt="Shiv lal"
                 className="w-full h-full object-cover filter grayscale contrast-[1.08] hover:grayscale-0 transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
                 loading="lazy"

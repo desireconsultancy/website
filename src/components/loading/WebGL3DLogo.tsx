@@ -289,7 +289,7 @@ export function WebGL3DLogo({ className = '', ref }: WebGL3DLogoProps) {
 
       // Loading PNG asset
       const img = new Image();
-      img.src = '/logo.png';
+      img.src = '/logo.webp';
       img.onload = () => {
         gl.bindTexture(gl.TEXTURE_2D, texture);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);

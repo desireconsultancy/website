@@ -275,7 +275,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
             {fragments.map((frag) => (
               <img
                 key={frag.id}
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Logo Fragment"
                 className="absolute inset-0 w-full h-full logo-fragment-png"
                 style={{
