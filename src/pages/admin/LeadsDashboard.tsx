@@ -198,7 +198,14 @@ export function LeadsDashboard() {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center px-4">
         <div className="w-full max-w-sm">
-          <div className="mb-8 text-center">
+          <div className="mb-8 text-center flex flex-col items-center">
+            <a href="/" className="w-12 h-12 rounded-xl overflow-hidden mb-4 p-1 block hover:scale-105 transition-transform">
+              <img
+                src="/logo.webp"
+                alt="Desire Consultancy Logo"
+                className="w-full h-full object-contain"
+              />
+            </a>
             <span className="text-[10px] tracking-[0.3em] text-[#16D9C5] font-mono uppercase">
               DESIRE CONSULTANCY
             </span>
@@ -245,13 +252,22 @@ export function LeadsDashboard() {
     <div className="min-h-screen bg-[#030303] text-white">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex items-center justify-between">
-        <div>
-          <span className="text-[9px] tracking-[0.25em] text-[#16D9C5] font-mono uppercase">
-            DESIRE CONSULTANCY
-          </span>
-          <h1 className="text-lg font-bold text-white font-display uppercase tracking-tight leading-none mt-0.5">
-            Lead Management
-          </h1>
+        <div className="flex items-center gap-3">
+          <a href="/" className="w-8 h-8 rounded-lg overflow-hidden p-0.5 block hover:scale-105 transition-transform">
+            <img
+              src="/logo.webp"
+              alt="Desire Consultancy Logo"
+              className="w-full h-full object-contain"
+            />
+          </a>
+          <div>
+            <span className="text-[9px] tracking-[0.25em] text-[#16D9C5] font-mono uppercase">
+              DESIRE CONSULTANCY
+            </span>
+            <h1 className="text-lg font-bold text-white font-display uppercase tracking-tight leading-none mt-0.5">
+              Lead Management
+            </h1>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-xs text-white/40 font-mono">{total} total leads</span>

@@ -63,15 +63,19 @@ export function Footer() {
         >
           {/* COLUMN 1: BRAND */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              {/* Minimalist vector monogram logo */}
-              <div className="w-8 h-8 rounded border border-white/20 flex items-center justify-center font-mono font-black text-sm text-white select-none bg-white/[0.02]">
-                D
+            <a href="/" className="flex items-center gap-3 group">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden flex items-center justify-center p-0.5 group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="/logo.webp"
+                  alt="Desire Consultancy Logo"
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
               </div>
-              <span className="font-display font-black text-sm uppercase tracking-[0.25em] text-white">
+              <span className="font-display font-black text-sm uppercase tracking-[0.25em] text-white group-hover:text-[#16D9C5] transition-colors">
                 Desire Consultancy
               </span>
-            </div>
+            </a>
             <p className="text-white/40 text-[11px] sm:text-xs leading-relaxed max-w-sm mt-1 font-sans">
               Helping businesses simplify certification, compliance, and approval processes across
               India with absolute precision.
