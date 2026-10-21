@@ -18,19 +18,21 @@ const json = (data: unknown, status = 200) =>
 
 const VALID_STATUSES = ['new', 'contacted', 'in_progress', 'converted', 'closed'];
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') return new Response(null, { headers: CORS_HEADERS });
   if (req.method !== 'PATCH') return json({ error: 'Method not allowed' }, 405);
 
   // ── Auth ─────────────────────────────────────────────────────
   const adminPassword = Deno.env.get('ADMIN_PASSWORD') ?? '';
-  const provided = (req.headers.get('authorization') ?? '').replace('Bearer ', '').trim();
+  const authHeader = req.headers.get('authorization') ?? '';
+  const adminCustomHeader = req.headers.get('x-admin-password') ?? '';
+  const provided = (adminCustomHeader || authHeader.replace('Bearer ', '')).trim();
   if (!adminPassword || provided !== adminPassword) return json({ error: 'Unauthorized' }, 401);
 
   // ── Parse body ────────────────────────────────────────────────
   let body: { id: string; status: string };
   try {
-    body = await req.json();
+    body = (await req.json()) as { id: string; status: string };
   } catch {
     return json({ error: 'Invalid JSON body' }, 400);
   }

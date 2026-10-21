@@ -9,40 +9,40 @@ interface FAQItem {
 
 const FAQ_DATA: FAQItem[] = [
   {
-    id: 'faq-fssai',
-    question: 'How long does the FSSAI licensing process take?',
+    id: 'faq-water-setup',
+    question: 'How do I start a packaged drinking water plant in India?',
     answer:
-      'Timelines vary depending on the license type, documentation readiness, and approval requirements. We assist throughout the process to ensure smooth and timely completion.',
+      'Starting a compliant packaged water bottling plant requires selecting an industrial site (2,000–5,000 sq. ft.), completing raw water chemical testing, securing CGWA borewell extraction NOC, installing multi-barrier RO/UV/Ozone machinery, setting up an on-site microbiology laboratory, and obtaining BIS IS 14543 ISI Mark certification and Central FSSAI licensing.',
+  },
+  {
+    id: 'faq-cost',
+    question: 'What is the setup cost of a packaged drinking water plant in India?',
+    answer:
+      'Total capital investment typically ranges from ₹25 Lakhs to ₹75 Lakhs. A 1000 LPH or 20-litre jar plant starts around ₹25–35 Lakhs, while a semi-automatic or fully automatic 2000 to 5000 LPH bottling line with bottle blowing and in-house laboratory setup ranges between ₹45 Lakhs to ₹75 Lakhs.',
+  },
+  {
+    id: 'faq-fssai',
+    question: 'Which FSSAI license is required for a water bottling factory?',
+    answer:
+      'A Central FSSAI Manufacturing License (Category 14 - Beverages / Packaged Drinking Water) is legally mandatory for all commercial water bottling plants in India, regardless of annual turnover.',
   },
   {
     id: 'faq-bis',
-    question: 'Do you provide BIS certification support?',
+    question: 'Is BIS ISI Mark certification mandatory for packaged drinking water?',
     answer:
-      'Yes. We provide guidance, documentation assistance, compliance support, and inspection preparation for BIS certification requirements.',
+      'Yes. Bureau of Indian Standards (BIS) certification under IS 14543 (for packaged drinking water) and IS 13428 (for natural mineral water) is legally compulsory before commercial sale or distribution anywhere in India.',
   },
   {
-    id: 'faq-water',
-    question: 'Can you assist packaged drinking water plants?',
+    id: 'faq-dpr',
+    question: 'Can Desire Consultancy prepare a project report (DPR) for a bank loan?',
     answer:
-      'Yes. We help businesses understand regulatory requirements, prepare documentation, coordinate approvals, and navigate compliance procedures.',
+      'Yes. We prepare bankable Detailed Project Reports (DPR) with machinery quotations, civil cleanroom layouts, financial ROI projections, and break-even calculations for MSME, PMEGP, and nationalized bank term loans.',
   },
   {
     id: 'faq-india',
-    question: 'Do you work with businesses across India?',
+    question: 'Do you provide turnkey consultancy support across all states in India?',
     answer:
-      'Yes. We provide consultancy support to businesses across India through remote and direct consultation.',
-  },
-  {
-    id: 'faq-inspection',
-    question: 'Do you provide inspection preparation support?',
-    answer:
-      'Yes. We help businesses prepare for audits, inspections, and verification processes with complete guidance and documentation assistance.',
-  },
-  {
-    id: 'faq-started',
-    question: 'How do I get started?',
-    answer:
-      "Simply contact us through the inquiry form or phone. We'll understand your requirements and recommend the appropriate next steps.",
+      'Yes. Desire Consultancy provides pan-India on-site and remote turnkey project consultancy — assisting clients in Maharashtra, Gujarat, Madhya Pradesh, Karnataka, Delhi-NCR, Uttar Pradesh, and across all Indian states.',
   },
 ];
 

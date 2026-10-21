@@ -142,8 +142,8 @@ curl -X POST https://YOUR_PROJECT.supabase.co/functions/v1/submit-lead \
    - `VITE_SUPABASE_ANON_KEY`
    - `VITE_GA4_MEASUREMENT_ID`
    - `VITE_CLARITY_PROJECT_ID`
-   - `VITE_ADMIN_PASSWORD`
    - `VITE_WHATSAPP_NUMBER`
+   *(Note: `ADMIN_PASSWORD` is set securely in Supabase Secrets, NOT in frontend Vercel variables)*
 5. Framework Preset: **Vite**
 6. Build Command: `npm run build`
 7. Output Directory: `dist`
@@ -223,9 +223,7 @@ curl -X POST https://YOUR_PROJECT.supabase.co/functions/v1/submit-lead \
 
 ## Accessing the Admin Dashboard
 
-Navigate to: `https://yourdomain.com/admin/leads`
-
-Enter the password set in `VITE_ADMIN_PASSWORD`.
+Enter the admin password configured in Supabase Edge Function Secrets (`ADMIN_PASSWORD`).
 
 Features:
 - View all leads sorted by date

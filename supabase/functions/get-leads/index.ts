@@ -19,14 +19,15 @@ const json = (data: unknown, status = 200) =>
     headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
   });
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') return new Response(null, { headers: CORS_HEADERS });
   if (req.method !== 'GET') return json({ error: 'Method not allowed' }, 405);
 
   // ── Auth check ────────────────────────────────────────────────
   const adminPassword = Deno.env.get('ADMIN_PASSWORD') ?? '';
   const authHeader = req.headers.get('authorization') ?? '';
-  const provided = authHeader.replace('Bearer ', '').trim();
+  const adminCustomHeader = req.headers.get('x-admin-password') ?? '';
+  const provided = (adminCustomHeader || authHeader.replace('Bearer ', '')).trim();
 
   if (!adminPassword || provided !== adminPassword) {
     return json({ error: 'Unauthorized' }, 401);
@@ -54,9 +55,12 @@ Deno.serve(async (req) => {
 
   if (status) query = query.eq('status', status);
   if (search) {
-    query = query.or(
-      `full_name.ilike.%${search}%,business_name.ilike.%${search}%,email.ilike.%${search}%,phone.ilike.%${search}%`,
-    );
+    const sanitizedSearch = search.replace(/[,()%"'\\]/g, '').trim();
+    if (sanitizedSearch) {
+      query = query.or(
+        `full_name.ilike.%${sanitizedSearch}%,business_name.ilike.%${sanitizedSearch}%,email.ilike.%${sanitizedSearch}%,phone.ilike.%${sanitizedSearch}%`,
+      );
+    }
   }
 
   const { data, count, error } = await query;

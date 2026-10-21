@@ -17,9 +17,9 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "Desire Consultancy | FSSAI, BIS & Compliance Experts — Nagpur, Maharashtra",
-  description = "Expert regulatory compliance consultancy in Nagpur, Maharashtra. FSSAI licensing, BIS certification, packaged drinking water plant setup, and industrial RO compliance — pan India.",
-  keywords = "FSSAI licensing Nagpur, BIS certification Maharashtra, water plant consultancy, industrial RO, regulatory compliance, Nagpur, Maharashtra, India, desire consultancy",
+  title = "Packaged Drinking Water Plant Setup Consultant India | BIS, FSSAI & Water Plant Project | Desire Consultancy",
+  description = "India's premier packaged drinking water plant setup consultancy. Turnkey solutions for mineral water bottling plants, BIS IS 14543 ISI mark, Central FSSAI licensing, CGWA borewell NOC, DPR project reports, and RO plant installation.",
+  keywords = "packaged drinking water plant setup consultant, water plant consultancy, water bottling plant setup cost in India, BIS certification requirements for packaged drinking water, FSSAI licence for packaged drinking water plant, mineral water plant project report, 1000 LPH packaged drinking water plant, 20 litre water jar plant, turnkey water plant project consultant, Desire Consultancy",
   canonicalUrl = "https://desireconsultancy.in/",
   ogImage = "https://desireconsultancy.in/og-image.jpg",
   robots = "index, follow",
@@ -35,9 +35,9 @@ export function SEO({
       <meta name="author" content="Desire Consultancy" />
       <meta name="robots" content={robots} />
       <meta name="geo.region" content="IN-MH" />
-      <meta name="geo.placename" content="Nagpur" />
-      <meta name="geo.position" content="21.1458;79.0882" />
-      <meta name="ICBM" content="21.1458, 79.0882" />
+      <meta name="geo.placename" content="Mumbai" />
+      <meta name="geo.position" content="19.0760;72.8777" />
+      <meta name="ICBM" content="19.0760, 72.8777" />
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />

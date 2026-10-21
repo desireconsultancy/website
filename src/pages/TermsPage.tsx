@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { SubpageLayout } from '../layouts/SubpageLayout';
 
 export function TermsPage() {
   return (
-    <>
+    <SubpageLayout>
       <Helmet>
-        <title>Terms and Conditions | Desire Consultancy — Nagpur</title>
+        <title>Terms and Conditions | Desire Consultancy — Mumbai</title>
         <meta
           name="description"
           content="Terms and Conditions for Desire Consultancy. Read the terms of service governing our FSSAI licensing and BIS certification compliance consultancy."
@@ -14,8 +15,8 @@ export function TermsPage() {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <div className="min-h-screen bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="text-white">
+        <div className="max-w-4xl mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <nav className="text-[10px] font-mono text-white/30 tracking-wider mb-12" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-[#16D9C5] transition-colors">Home</Link>
@@ -74,7 +75,7 @@ export function TermsPage() {
             <section className="space-y-4">
               <h2 className="text-xl font-semibold text-white uppercase font-display border-b border-white/10 pb-2">5. Jurisdiction</h2>
               <p>
-                Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the competent courts in Nagpur, Maharashtra, India.
+                Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the competent courts in Mumbai, Maharashtra, India.
               </p>
               <p className="text-xs font-mono text-white/40">Last Updated: June 28, 2026</p>
             </section>
@@ -97,7 +98,7 @@ export function TermsPage() {
           </div>
         </div>
       </div>
-    </>
+    </SubpageLayout>
   );
 }
 export default TermsPage;

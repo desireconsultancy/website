@@ -58,7 +58,7 @@ async function hashIP(ip: string): Promise<string> {
     .slice(0, 32);
 }
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   // CORS preflight
   if (req.method === 'OPTIONS') return new Response(null, { headers: CORS_HEADERS });
   if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
@@ -66,7 +66,7 @@ Deno.serve(async (req) => {
   // ── Parse body ────────────────────────────────────────────────
   let body: Record<string, string>;
   try {
-    body = await req.json();
+    body = (await req.json()) as Record<string, string>;
   } catch {
     return json({ error: 'Invalid JSON body' }, 400);
   }

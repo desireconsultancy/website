@@ -1,0 +1,96 @@
+# Desire Consultancy — Comprehensive Regulatory & Compliance Documentation (llms-full.txt)
+
+## 1. Corporate Profile
+- Company Name: Desire Consultancy
+- Headquarters: Nagpur, Maharashtra, India
+- Founder & Principal Consultant: Yashlok Singh
+- Telephone: +91 84215 04028
+- Direct Inquiries: desireconsultancy37@gmail.com
+- Domain: https://desireconsultancy.in
+- Core Sectors: Food Safety Regulations, Bureau of Indian Standards, Water Treatment Engineering, Brand Trademark Protection.
+
+---
+
+## 2. FSSAI Licensing Regulatory Framework
+Regulatory Body: Food Safety and Standards Authority of India (FSSAI), Ministry of Health and Family Welfare, Government of India.
+Primary Portal: FoSCoS (Food Safety Compliance System).
+
+### Eligibility & Classification Matrix:
+1. Basic FSSAI Registration (Form A):
+   - Turnover Bracket: Up to ₹12 Lakhs per annum.
+   - Eligible Entities: Petty food manufacturers, small hawkers, local retail stalls, temporary food stalls, small cottage food processors.
+2. State FSSAI License (Form B):
+   - Turnover Bracket: Between ₹12 Lakhs and ₹20 Crores per annum.
+   - Eligible Entities: Mid-scale food manufacturing units, restaurants, cloud kitchens, catering establishments, state-level distributors, storage units with capacity up to 50,000 MT.
+3. Central FSSAI License:
+   - Turnover Bracket: Exceeding ₹20 Crores per annum, OR operating in multiple states (Head Office License).
+   - Mandatory Inclusion Categories: Importers, 100% Export-Oriented Units (EOUs), e-commerce food platforms, proprietary food manufacturers, airlines/railway catering, packaged drinking water manufacturing facilities.
+
+### Required Documentation Checklist:
+- Form-B signed by Authorized Signatory
+- Plant layout blueprint with manufacturing dimensions and equipment line flow
+- Proof of possession of premises (lease deed, registered electricity bill, or rent deed)
+- List of plant machinery with horsepower and manufacturing capacity
+- Water potability testing report from NABL-accredited laboratory
+- List of Directors/Partners with photo ID, PAN card, and Aadhaar card
+- Partnership Deed / Memorandum and Articles of Association (MoA/AoA)
+- Recall plan and food safety management system (FSMS) plan
+
+---
+
+## 3. BIS (Bureau of Indian Standards) ISI Mark Certification
+Regulatory Act: Bureau of Indian Standards Act, 2016.
+Authority: Bureau of Indian Standards (BIS), Ministry of Consumer Affairs, Food and Public Distribution, Government of India.
+
+### Key Standards Handled:
+- IS 14543: Packaged Drinking Water (Other than Natural Mineral Water).
+- IS 13428: Packaged Natural Mineral Water.
+- IS 4984 / IS 12786: Polyethylene Pipes for Water Supply & Irrigation.
+- IS 694 / IS 1554: PVC Insulated Cables for Electric Supply.
+- IS 1786: High Strength Deformed Steel Bars for Concrete Reinforcement.
+- CRS (Compulsory Registration Scheme): Electronics and IT hardware under MeitY notifications.
+
+### Certification Life Cycle:
+1. Standard Gap Analysis: Reviewing factory testing capabilities, in-house lab equipment, and raw material validation.
+2. In-House Laboratory Setup: Installing required testing apparatus (microbiological incubators, laminar airflow, autoclave, chemical titration glassware, analytical balances) as per BIS Scheme of Inspection and Testing (SIT).
+3. Application Submission via Manakonline: Documentation, test certificates, calibration certificates of factory gauges.
+4. Preliminary BIS Inspection: Onsite audit by BIS inspecting officer, witnessing sample testing, verification of manufacturing process.
+5. Sample Dispatch to Independent NABL Lab: Sealing of samples by BIS officer for parallel verification.
+6. Grant of ISI Mark License & Annual Surveillance Management.
+
+---
+
+## 4. Packaged Drinking Water & Mineral Water Plant Setup
+Turnkey Services Offered:
+- Feasibility study and hydrogeological assessment.
+- Civil layout engineering compliant with BIS sanitation hygiene norms (segregated raw water, processing hall, bottle washing, positive pressure cleanroom filling, and packaging areas).
+- Central Ground Water Authority (CGWA) NOC processing for groundwater abstraction.
+- Multi-barrier water treatment design: Quartz sand filtration, activated carbon filtration, water softening/antiscalant dosing, 5-micron & 1-micron cartridge filtration, Reverse Osmosis (RO) membranes, UV disinfection, and Ozone contactor systems.
+- Complete in-house testing laboratory setup (chemical & microbiological).
+- FSSAI Central License and BIS IS 14543 certification coordination.
+
+---
+
+## 5. Industrial RO Solutions & Effluent Clearance
+- Design advisory for brackish water RO, industrial boiler feed RO, and high-recovery multi-stage RO systems.
+- Maharashtra Pollution Control Board (MPCB) / Central Pollution Control Board (CPCB) consent to establish (CTE) and consent to operate (CTO).
+- Zero Liquid Discharge (ZLD) advisory, membrane life extension, and antiscalant/cleaning chemical optimization.
+
+---
+
+## 6. Trademark & Brand Protection
+Authority: Intellectual Property India (Controller General of Patents, Designs and Trade Marks).
+- Trademark Class Search (Classes 1 to 45 under the Nice Classification system).
+- Application Filing (Form TM-A).
+- Responding to governmental examination objections (Section 9 absolute grounds, Section 11 relative grounds).
+- Representation in trademark hearings.
+- Oppositions and 10-year renewal filings (Form TM-R).
+
+---
+
+## 7. Contact & Official Representation
+- Primary Contact: Yashlok Singh
+- Address: Nagpur, Maharashtra, India
+- Phone: +91 84215 04028
+- Email: desireconsultancy37@gmail.com
+- Website: https://desireconsultancy.in

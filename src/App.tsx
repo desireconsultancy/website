@@ -19,9 +19,11 @@ type AppState = 'LOADING' | 'HOLD' | 'TRANSITIONING' | 'READY';
 
 function App() {
   useLenis();
-  const [appState, setAppState] = useState<AppState>('LOADING');
-  const [isWebGLVisible, setIsWebGLVisible] = useState(false);
-  const [isLoadingOverlayActive, setIsLoadingOverlayActive] = useState(true);
+  const hasLoadedBefore = typeof window !== 'undefined' && sessionStorage.getItem('dc_intro_played') === 'true';
+  const [appState, setAppState] = useState<AppState>(hasLoadedBefore ? 'READY' : 'LOADING');
+  const [isWebGLVisible, setIsWebGLVisible] = useState(hasLoadedBefore);
+  const [isLoadingOverlayActive, setIsLoadingOverlayActive] = useState(!hasLoadedBefore);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Expose WebGL canvas controls directly to avoid React state triggers
   const logoRef = useRef<WebGL3DLogoRef>(null);
@@ -75,7 +77,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-[150vh] bg-black text-white overflow-x-hidden font-sans select-none">
+    <div className="relative min-h-[150vh] bg-black text-white overflow-x-hidden font-sans">
       <SEO />
       {/* 1. Subtle Premium Background Grid & Center Orb */}
 
@@ -104,7 +106,7 @@ function App() {
 
       {/* 2. Premium Navigation Bar (Revealed during transition) */}
       <header
-        className={`fixed top-0 left-0 right-0 h-20 border-b border-white/5 backdrop-blur-md bg-black/20 z-40 transition-all duration-[1600ms] ease-out ${
+        className={`fixed top-0 left-0 right-0 h-20 border-b border-white/5 backdrop-blur-md bg-black/40 z-40 transition-all duration-[1600ms] ease-out ${
           appState === 'TRANSITIONING' || appState === 'READY'
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4'
@@ -113,34 +115,69 @@ function App() {
         <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 md:px-8 flex items-center justify-between">
           {/* Logo brand label (Fades in slightly after logo flies into place) */}
           <div className="flex items-center gap-14 pl-[56px] sm:pl-[62px] md:pl-[72px]">
-            <span className="font-display font-bold tracking-[0.3em] sm:tracking-[0.35em] text-[10px] sm:text-xs md:text-sm text-white uppercase leading-none select-none">
+            <a href="/" className="font-display font-bold tracking-[0.3em] sm:tracking-[0.35em] text-[10px] sm:text-xs md:text-sm text-white uppercase leading-none select-none hover:text-[#16D9C5] transition-colors">
               DESIRE CONSULTANCY
-            </span>
+            </a>
           </div>
 
-          {/* Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-10">
-            {['Services', 'Process', 'About', 'Contact'].map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300"
-              >
-                {link}
-              </a>
-            ))}
+          {/* Navigation Links (Desktop) */}
+          <nav className="hidden lg:flex items-center gap-8">
+            <a href="#services" className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300">Services</a>
+            <a href="#process" className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300">Process</a>
+            <a href="#why-choose-us" className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300">Why Us</a>
+            <a href="#founder" className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300">About</a>
+            <a href="/blog" className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300">Blog</a>
+            <a href="#contact" className="text-[10px] tracking-[0.25em] text-white/50 hover:text-white uppercase transition-colors duration-300">Contact</a>
           </nav>
 
-          {/* CTA Action Button */}
-          <div>
+          {/* CTA + Mobile Hamburger */}
+          <div className="flex items-center gap-3">
             <a
               href="#contact"
               className="text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.22em] text-white uppercase bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all duration-500 px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full inline-block text-center"
             >
               Book Consultation
             </a>
+
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="lg:hidden p-2 rounded-xl border border-white/10 text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Navigation Drawer */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 flex flex-col gap-4 animate-in fade-in duration-200 shadow-2xl">
+            <nav className="flex flex-col gap-1 font-mono text-xs tracking-widest uppercase">
+              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-white/70 hover:text-[#16D9C5] hover:bg-white/5 transition-all">Services Overview</a>
+              <a href="/fssai-certification" onClick={() => setIsMobileMenuOpen(false)} className="py-2 px-3 pl-6 text-[11px] text-white/50 hover:text-[#16D9C5] transition-all">↳ FSSAI Licensing</a>
+              <a href="/bis-certification" onClick={() => setIsMobileMenuOpen(false)} className="py-2 px-3 pl-6 text-[11px] text-white/50 hover:text-[#16D9C5] transition-all">↳ BIS Certification</a>
+              <a href="/services/packaged-drinking-water" onClick={() => setIsMobileMenuOpen(false)} className="py-2 px-3 pl-6 text-[11px] text-white/50 hover:text-[#16D9C5] transition-all">↳ Packaged Water Plants</a>
+              <a href="/services/ro-solutions" onClick={() => setIsMobileMenuOpen(false)} className="py-2 px-3 pl-6 text-[11px] text-white/50 hover:text-[#16D9C5] transition-all">↳ Industrial RO Systems</a>
+              <a href="/trademark-registration" onClick={() => setIsMobileMenuOpen(false)} className="py-2 px-3 pl-6 text-[11px] text-white/50 hover:text-[#16D9C5] transition-all">↳ Trademark Protection</a>
+              <a href="#process" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-white/70 hover:text-[#16D9C5] hover:bg-white/5 transition-all">Process</a>
+              <a href="#founder" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-white/70 hover:text-[#16D9C5] hover:bg-white/5 transition-all">About Founder</a>
+              <a href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-white/70 hover:text-[#16D9C5] hover:bg-white/5 transition-all">Compliance Blog</a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 px-3 rounded-lg text-white/70 hover:text-[#16D9C5] hover:bg-white/5 transition-all">Contact Us</a>
+            </nav>
+            <div className="pt-4 border-t border-white/5 text-[10px] font-mono text-white/40 flex justify-between items-center">
+              <span>📞 +91 84215 04028</span>
+              <span>Mumbai, Maharashtra</span>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* 3. Global 3D WebGL Logo (Shared layout element that flies to navigation) */}
@@ -181,19 +218,20 @@ function App() {
               TRUSTED FSSAI & BIS CONSULTANCY
             </div>
 
-            {/* Large Typography Main Headline */}
-            <h2
+            {/* Large Typography Main Headline (Single H1 on Homepage) */}
+            <h1
               className={`font-display text-4xl sm:text-6xl font-bold tracking-tight text-white uppercase leading-[1.15] max-w-xl transition-all duration-[1200ms] delay-300 ${
                 appState === 'READY' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              Helping Businesses
+              Packaged Water Plant,
               <br />
-              Get Certified,
+              <span className="bg-gradient-to-r from-[#0E6EFF] to-[#16D9C5] bg-clip-text text-transparent">
+                FSSAI &amp; BIS
+              </span>
               <br />
-              Compliant &<br />
-              Market Ready.
-            </h2>
+              Consultancy.
+            </h1>
 
             {/* Bulleted Subtext */}
             <div

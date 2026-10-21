@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
+import { SubpageLayout } from '../layouts/SubpageLayout';
 
 // Simple structure of our blog posts for SEO indexing
 interface BlogPost {
@@ -93,6 +94,111 @@ const MOCK_BLOGS: Record<string, BlogPost> = {
       </>
     ),
   },
+  'packaged-drinking-water-plant-setup': {
+    slug: 'packaged-drinking-water-plant-setup',
+    title: 'How to Set Up a Packaged Drinking Water Plant in India: Compliance, Licenses & Cost',
+    description: 'Complete guide to starting a commercial packaged drinking water bottling plant under IS 14543: CGWA NOC, civil hygiene layout, NABL lab setup, and BIS licensing.',
+    date: 'June 25, 2026',
+    category: 'Water Plant Setup',
+    readTime: '9 min read',
+    content: (
+      <>
+        <p>
+          The packaged drinking water industry in India is expanding rapidly due to rising health consciousness and urbanization. However, establishing a commercial water packaging factory requires navigating one of India&apos;s most stringent regulatory environments, headed by the Bureau of Indian Standards (BIS) and the Food Safety and Standards Authority of India (FSSAI).
+        </p>
+        <h3>1. Mandatory Approvals & Licenses Required</h3>
+        <p>
+          Before commencing commercial bottling and distribution, every entrepreneur must secure:
+        </p>
+        <ul>
+          <li><strong>BIS IS 14543 Certification:</strong> Mandatory ISI mark for packaged drinking water (other than natural mineral water).</li>
+          <li><strong>Central FSSAI License:</strong> Under Category 14 (Beverages - Packaged Water).</li>
+          <li><strong>CGWA Borewell NOC:</strong> Mandatory groundwater extraction clearance from Central Ground Water Authority.</li>
+          <li><strong>State Pollution Control Board NOC:</strong> Consent to Establish (CTE) and Consent to Operate (CTO).</li>
+          <li><strong>Local Municipal Trade License:</strong> Industrial trade authorization from municipal corporations.</li>
+        </ul>
+        <h3>2. Civil Architecture & Hygiene Zoning</h3>
+        <p>
+          BIS mandates strict physical separation between plant zones to prevent microbial contamination. The plant layout must incorporate:
+        </p>
+        <ol>
+          <li>Raw material receiving and bottle blow-molding section.</li>
+          <li>Multi-barrier water purification zone (sand filters, activated carbon, RO membranes, micron cartridges).</li>
+          <li>Hygienic filling cubicle with positive pressure HEPA filtered air, UV sterilization, and epoxy-coated non-porous flooring.</li>
+          <li>Finished goods storage and dispatch bay.</li>
+        </ol>
+        <h3>3. In-House Microbiology & Chemical Laboratory</h3>
+        <p>
+          Unlike ordinary food units, packaged water plants cannot outsource daily testing. An operational on-site laboratory with an autoclave, laminar airflow bench, incubator, and a full-time qualified microbiologist and chemist is mandatory prior to the official BIS inspection.
+        </p>
+        <h3>4. Setup Cost & Investment Breakdown (1000 LPH vs 2000 LPH vs 20L Jar)</h3>
+        <p>
+          Starting a commercial water packaging factory requires careful capital allocation across five core heads:
+        </p>
+        <ul>
+          <li><strong>Small-Scale 20L Jar Plant (1000 LPH):</strong> ₹25 Lakhs – ₹35 Lakhs (Ideal for regional office/residential distribution).</li>
+          <li><strong>Medium-Scale Automatic Bottling Line (2000 LPH):</strong> ₹45 Lakhs – ₹60 Lakhs (Produces 2,500+ bottles/hr of 250ml, 500ml, and 1-Litre bottles).</li>
+          <li><strong>High-Speed Commercial Line (5000 LPH):</strong> ₹65 Lakhs – ₹85 Lakhs+ (Fully integrated blow moulding, rotary RFC monoblock, shrink tunnel packaging).</li>
+          <li><strong>In-House Testing Laboratory Setup:</strong> ₹3.5 Lakhs – ₹6 Lakhs (Instruments, glassware, and microbial media under IS 14543).</li>
+          <li><strong>Statutory Licences & BIS Audits:</strong> ₹2.5 Lakhs – ₹4.5 Lakhs (Application fees, marking fees, CGWA clearance, security deposits).</li>
+        </ul>
+        <h3>5. Preparing a Bankable Detailed Project Report (DPR) for Bank Finance</h3>
+        <p>
+          Banks and financial institutions (SBI, Bank of Baroda, PMEGP, CGTMSE, SIDBI) require an exhaustively audited Detailed Project Report before approving machinery loans or term finance. A bankable DPR must contain:
+        </p>
+        <ol>
+          <li>Market demand-supply analysis in the target 50 km logistics radius.</li>
+          <li>Process flowchart and technical machinery quotations from certified manufacturers.</li>
+          <li>Water recovery ratios (ensuring minimum 50% permeate recovery under modern RO design).</li>
+          <li>Projected Profit & Loss statement, Break-Even Point (BEP), and Debt Service Coverage Ratio (DSCR).</li>
+        </ol>
+        <p>
+          Desire Consultancy acts as your complete turnkey partner: preparing bankable DPRs, designing cleanroom civil layouts, supervising machinery installation, and obtaining full BIS and FSSAI certifications.
+        </p>
+      </>
+    ),
+  },
+  'trademark-registration-guide-india': {
+    slug: 'trademark-registration-guide-india',
+    title: 'Trademark Registration in India: The Complete Step-by-Step Guide',
+    description: 'Protect your brand name, logo, and slogan. Learn about NICE classification, Form TM-A online filing, 50% MSME rebates, objection replies, and the journey from ™ to ®.',
+    date: 'June 28, 2026',
+    category: 'Trademark Registration',
+    readTime: '7 min read',
+    content: (
+      <>
+        <p>
+          Your brand name, company logo, and distinctive packaging represent the core identity and goodwill of your enterprise. In an increasingly competitive digital marketplace, failing to register your trademark leaves your business vulnerable to brand theft, counterfeiting, and costly legal disputes.
+        </p>
+        <h3>1. Selecting Classes under the NICE Classification</h3>
+        <p>
+          Trademarks are registered under 45 distinct classes (Classes 1–34 for goods and Classes 35–45 for services). Choosing the appropriate class ensures comprehensive legal protection:
+        </p>
+        <ul>
+          <li><strong>Class 32:</strong> Packaged drinking water, mineral waters, beers, and non-alcoholic drinks.</li>
+          <li><strong>Class 29 & 30:</strong> Packaged food products, spices, bakery goods, and edible oils.</li>
+          <li><strong>Class 35:</strong> Retail services, advertising, business management, and e-commerce trading.</li>
+          <li><strong>Class 42:</strong> Scientific, technological, and quality testing consultancy services.</li>
+        </ul>
+        <h3>2. The Registration Timeline: From ™ to ®</h3>
+        <p>
+          Once Form TM-A is submitted with the Controller General of Patents, Designs and Trade Marks (CGPDTM), you can immediately begin displaying the ™ symbol. The legal journey progresses through:
+        </p>
+        <ol>
+          <li><strong>Formalities Check Pass:</strong> Initial registry verification of applicant details and power of attorney.</li>
+          <li><strong>Examination Report:</strong> The examiner reviews distinctiveness (Section 9) and similarity (Section 11). If objections arise, a comprehensive reply must be submitted within 30 days.</li>
+          <li><strong>Journal Publication:</strong> The mark is published in the official Trademark Journal for 4 months to allow third-party review.</li>
+          <li><strong>Registration Certificate:</strong> If unopposed, the registration certificate is issued, granting legal permission to use the prestigious ® symbol for 10 years.</li>
+        </ol>
+        <p>
+          <strong>Tip for Startups & MSMEs:</strong> Recognized startups (DPIIT) and Udyam-registered enterprises are eligible for a 50% statutory government fee discount (₹4,500 instead of ₹9,000 per class).
+        </p>
+        <p>
+          Desire Consultancy manages your trademark journey end-to-end: comprehensive phonetic search, TM-A filing, formal objection drafting, and hearing representation.
+        </p>
+      </>
+    ),
+  },
 };
 
 export function BlogPage() {
@@ -104,18 +210,20 @@ export function BlogPage() {
 
     if (!blog) {
       return (
-        <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6">
-          <h1 className="text-2xl font-bold uppercase tracking-wider mb-4">Blog Post Not Found</h1>
-          <p className="text-white/50 mb-8">The article you are looking for does not exist or has been moved.</p>
-          <Link to="/blog" className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white hover:text-black font-mono text-xs uppercase transition-all duration-300">
-            ← Back to Blogs
-          </Link>
-        </div>
+        <SubpageLayout>
+          <div className="text-white flex flex-col items-center justify-center py-20 px-6">
+            <h1 className="text-2xl font-bold uppercase tracking-wider mb-4">Blog Post Not Found</h1>
+            <p className="text-white/50 mb-8">The article you are looking for does not exist or has been moved.</p>
+            <Link to="/blog" className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white hover:text-black font-mono text-xs uppercase transition-all duration-300">
+              ← Back to Blogs
+            </Link>
+          </div>
+        </SubpageLayout>
       );
     }
 
     return (
-      <>
+      <SubpageLayout>
         <Helmet>
           <title>{`${blog.title} | Desire Consultancy Blog`}</title>
           <meta name="description" content={blog.description} />
@@ -127,8 +235,8 @@ export function BlogPage() {
           <meta property="og:url" content={`https://desireconsultancy.in/blog/${blog.slug}`} />
         </Helmet>
 
-        <div className="min-h-screen bg-black text-white">
-          <div className="max-w-4xl mx-auto px-6 py-20">
+        <div className="text-white">
+          <div className="max-w-4xl mx-auto px-6 py-12">
             {/* Breadcrumb */}
             <nav className="text-[10px] font-mono text-white/30 tracking-wider mb-12" aria-label="Breadcrumb">
               <Link to="/" className="hover:text-[#16D9C5] transition-colors">Home</Link>
@@ -161,13 +269,13 @@ export function BlogPage() {
             </div>
           </div>
         </div>
-      </>
+      </SubpageLayout>
     );
   }
 
   // Otherwise, render the Blog Listing page
   return (
-    <>
+    <SubpageLayout>
       <Helmet>
         <title>Compliance &amp; Licensing Blog | Desire Consultancy</title>
         <meta
@@ -178,8 +286,8 @@ export function BlogPage() {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <div className="min-h-screen bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="text-white">
+        <div className="max-w-4xl mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <nav className="text-[10px] font-mono text-white/30 tracking-wider mb-12" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-[#16D9C5] transition-colors">Home</Link>
@@ -237,7 +345,7 @@ export function BlogPage() {
           </div>
         </div>
       </div>
-    </>
+    </SubpageLayout>
   );
 }
 export default BlogPage;

@@ -2,29 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <link rel="apple-touch-icon" href="/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desire Consultancy | FSSAI, BIS &amp; Compliance Experts — Nagpur</title>
+    <title>Desire Consultancy | FSSAI, BIS &amp; Packaged Water Plant Setup Experts — Mumbai</title>
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your real Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA4_MEASUREMENT_ID%"></script>
+    <!-- Google Analytics 4 (dynamically loaded when valid ID is configured) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '%VITE_GA4_MEASUREMENT_ID%', {
-        page_path: window.location.pathname,
-        send_page_view: true
-      });
+      (function() {
+        var gaId = "%VITE_GA4_MEASUREMENT_ID%";
+        if (gaId && gaId.indexOf("%") === -1 && gaId !== "G-XXXXXXXXXX") {
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(gaId);
+          document.head.appendChild(script);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaId, {
+            page_path: window.location.pathname,
+            send_page_view: true
+          });
+        }
+      })();
     </script>
 
-    <!-- Microsoft Clarity — replace placeholder with your real Project ID -->
+    <!-- Microsoft Clarity (dynamically loaded when valid ID is configured) -->
     <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "%VITE_CLARITY_PROJECT_ID%");
+      (function() {
+        var clarityId = "%VITE_CLARITY_PROJECT_ID%";
+        if (clarityId && clarityId.indexOf("%") === -1 && clarityId !== "XXXXXXXXXX") {
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", clarityId);
+        }
+      })();
     </script>
 
     <!-- Preconnect & fonts for performance -->

@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import type { Lead, LeadStatus } from '../../lib/supabase/database.types';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD as string;
 
 const STATUS_CONFIG: Record<LeadStatus, { label: string; color: string; bg: string }> = {
   new:         { label: 'New',         color: '#60a5fa', bg: 'rgba(96,165,250,0.1)'  },
@@ -26,10 +25,20 @@ function StatusBadge({ status }: { status: LeadStatus }) {
   );
 }
 
+// Neutralize CSV Formula Injection (CWE-1236)
+function sanitizeCSVCell(value: unknown): string {
+  if (value === null || value === undefined) return '""';
+  const str = String(value).trim();
+  const formulaTriggers = ['=', '+', '-', '@', '\t', '\r'];
+  const safeStr = formulaTriggers.includes(str.charAt(0)) ? `'${str}` : str;
+  return `"${safeStr.replace(/"/g, '""')}"`;
+}
+
 export function LeadsDashboard() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState('');
+  const [authToken, setAuthToken] = useState<string | null>(() => sessionStorage.getItem('admin_token'));
+  const [passwordInput, setPasswordInput] = useState('');
   const [authError, setAuthError] = useState('');
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const [leads, setLeads] = useState<Lead[]>([]);
   const [total, setTotal] = useState(0);
@@ -41,29 +50,62 @@ export function LeadsDashboard() {
   const [page, setPage] = useState(1);
   const LIMIT = 20;
 
-  // ── Auth ──────────────────────────────────────────────────────
-  const handleLogin = (e: React.FormEvent) => {
+  // ── Server-Verified Auth ──────────────────────────────────────
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      sessionStorage.setItem('admin_auth', 'true');
-      setIsAuthenticated(true);
-      setAuthError('');
-    } else {
-      setAuthError('Incorrect password. Please try again.');
+    if (!passwordInput.trim()) {
+      setAuthError('Please enter the admin password.');
+      return;
+    }
+
+    setIsVerifying(true);
+    setAuthError('');
+
+    try {
+      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+      // Authenticate against the Edge Function server-side
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/get-leads?limit=1`, {
+        headers: {
+          apikey: anonKey,
+          Authorization: `Bearer ${anonKey}`,
+          'x-admin-password': passwordInput.trim(),
+        },
+      });
+
+      if (res.status === 401) {
+        setAuthError('Incorrect password. Please try again.');
+        return;
+      }
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? 'Authentication check failed.');
+      }
+
+      const verifiedToken = passwordInput.trim();
+      sessionStorage.setItem('admin_token', verifiedToken);
+      setAuthToken(verifiedToken);
+      setPasswordInput('');
+    } catch (err) {
+      setAuthError(err instanceof Error ? err.message : 'Network error verifying credentials.');
+    } finally {
+      setIsVerifying(false);
     }
   };
 
-  useEffect(() => {
-    if (sessionStorage.getItem('admin_auth') === 'true') {
-      setIsAuthenticated(true);
-    }
-  }, []);
+  const handleSignOut = () => {
+    sessionStorage.removeItem('admin_token');
+    setAuthToken(null);
+    setLeads([]);
+  };
 
   // ── Fetch leads ───────────────────────────────────────────────
   const fetchLeads = useCallback(async () => {
+    if (!authToken) return;
     setLoading(true);
     setError('');
     try {
+      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
       const params = new URLSearchParams({
         page: String(page),
         limit: String(LIMIT),
@@ -75,15 +117,16 @@ export function LeadsDashboard() {
         `${SUPABASE_URL}/functions/v1/get-leads?${params}`,
         {
           headers: {
-            Authorization: `Bearer ${ADMIN_PASSWORD}`,
-            apikey: import.meta.env.VITE_SUPABASE_ANON_KEY as string,
+            apikey: anonKey,
+            Authorization: `Bearer ${anonKey}`,
+            'x-admin-password': authToken,
           },
         },
       );
 
       if (res.status === 401) {
-        sessionStorage.removeItem('admin_auth');
-        setIsAuthenticated(false);
+        handleSignOut();
+        setAuthError('Session expired or unauthorized. Please sign in again.');
         return;
       }
 
@@ -96,23 +139,26 @@ export function LeadsDashboard() {
     } finally {
       setLoading(false);
     }
-  }, [page, statusFilter, search]);
+  }, [page, statusFilter, search, authToken]);
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (authToken) {
       const timer = setTimeout(fetchLeads, 300); // debounce search
       return () => clearTimeout(timer);
     }
-  }, [isAuthenticated, fetchLeads]);
+  }, [authToken, fetchLeads]);
 
   // ── Update status ─────────────────────────────────────────────
   const handleStatusChange = async (id: string, newStatus: LeadStatus) => {
+    if (!authToken) return;
     try {
+      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
       const res = await fetch(`${SUPABASE_URL}/functions/v1/update-lead-status`, {
         method: 'PATCH',
         headers: {
-          Authorization: `Bearer ${ADMIN_PASSWORD}`,
-          apikey: import.meta.env.VITE_SUPABASE_ANON_KEY as string,
+          apikey: anonKey,
+          Authorization: `Bearer ${anonKey}`,
+          'x-admin-password': authToken,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ id, status: newStatus }),
@@ -124,17 +170,21 @@ export function LeadsDashboard() {
     }
   };
 
-  // ── CSV Export ────────────────────────────────────────────────
+  // ── Sanitized CSV Export ──────────────────────────────────────
   const exportCSV = () => {
     const headers = ['Name', 'Business', 'Phone', 'Email', 'Service', 'Status', 'Date', 'Message'];
     const rows = leads.map((l) => [
-      l.full_name, l.business_name, l.phone, l.email,
-      l.service, l.status,
-      new Date(l.created_at).toLocaleDateString('en-IN'),
-      `"${l.message.replace(/"/g, '""')}"`,
+      sanitizeCSVCell(l.full_name),
+      sanitizeCSVCell(l.business_name),
+      sanitizeCSVCell(l.phone),
+      sanitizeCSVCell(l.email),
+      sanitizeCSVCell(l.service),
+      sanitizeCSVCell(l.status),
+      sanitizeCSVCell(new Date(l.created_at).toLocaleDateString('en-IN')),
+      sanitizeCSVCell(l.message),
     ]);
-    const csv = [headers, ...rows].map((r) => r.join(',')).join('\n');
-    const blob = new Blob([csv], { type: 'text/csv' });
+    const csv = [headers.map(sanitizeCSVCell), ...rows].map((r) => r.join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -144,7 +194,7 @@ export function LeadsDashboard() {
   };
 
   // ── Login screen ──────────────────────────────────────────────
-  if (!isAuthenticated) {
+  if (!authToken) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center px-4">
         <div className="w-full max-w-sm">
@@ -164,11 +214,12 @@ export function LeadsDashboard() {
               <input
                 id="admin-password"
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:border-[#16D9C5]/50 focus:outline-none transition-all duration-300"
                 placeholder="Enter admin password"
                 autoComplete="current-password"
+                disabled={isVerifying}
               />
             </div>
             {authError && (
@@ -176,9 +227,10 @@ export function LeadsDashboard() {
             )}
             <button
               type="submit"
-              className="w-full py-3 rounded-full bg-gradient-to-tr from-[#0E6EFF] to-[#16D9C5] text-black font-semibold text-xs tracking-widest uppercase"
+              disabled={isVerifying}
+              className="w-full py-3 rounded-full bg-gradient-to-tr from-[#0E6EFF] to-[#16D9C5] text-black font-semibold text-xs tracking-widest uppercase disabled:opacity-50 transition-all duration-300"
             >
-              Sign In
+              {isVerifying ? 'Verifying...' : 'Sign In'}
             </button>
           </form>
         </div>
@@ -210,7 +262,7 @@ export function LeadsDashboard() {
             Export CSV
           </button>
           <button
-            onClick={() => { sessionStorage.removeItem('admin_auth'); setIsAuthenticated(false); }}
+            onClick={handleSignOut}
             className="px-4 py-2 rounded-full border border-red-500/20 text-[10px] tracking-widest text-red-400 hover:bg-red-500/10 transition-all duration-300 font-mono uppercase"
           >
             Sign Out

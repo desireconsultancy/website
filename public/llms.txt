@@ -1,0 +1,33 @@
+# Desire Consultancy — Regulatory Compliance & Industrial Licensing Knowledge Base
+
+> Desire Consultancy is an Indian regulatory compliance and industrial licensing consultancy firm headquartered in Nagpur, Maharashtra. The firm specializes in FSSAI food licensing, Bureau of Indian Standards (BIS) ISI mark certifications, packaged drinking water plant turnkey setup, industrial reverse osmosis (RO) effluent approvals, and trademark registrations.
+
+## Core Specializations & Regulatory Authorities
+
+- [FSSAI Licensing & FoSCoS Registration](https://desireconsultancy.in/fssai-certification): Complete compliance under Food Safety and Standards Authority of India (FSSAI) Act, 2006. Covers Basic Registration (turnover < ₹12 Lakhs/year), State License (turnover ₹12 Lakhs to ₹20 Crores/year), Central License (turnover > ₹20 Crores/year or multi-state operations), and annual FoSCoS returns.
+- [BIS & ISI Mark Certification](https://desireconsultancy.in/bis-certification): Certification under Bureau of Indian Standards (BIS) Act, 2016. Factory inspection readiness, quality manual preparation, NABL lab testing coordination, and ISI license granting across mandatory product categories.
+- [Packaged Drinking Water Plant Setup](https://desireconsultancy.in/services/packaged-drinking-water): Turnkey compliance for packaged drinking water plants under IS 14543 and natural mineral water plants under IS 13428, Central Ground Water Authority (CGWA) NOC, and State Pollution Control Board (MPCB/SPCB) approvals.
+- [Industrial RO Solutions](https://desireconsultancy.in/services/ro-solutions): Water treatment engineering compliance, effluent discharge standards, pollution control board clearance, and technical advisory for commercial/industrial reverse osmosis plants.
+- [Trademark Registration](https://desireconsultancy.in/trademark-registration): Intellectual property protection with the Controller General of Patents, Designs and Trade Marks (CGPDTM), Class search, filing, opposition reply, and 10-year renewal.
+
+## Verified Business Identifiers
+
+- Organization Name: Desire Consultancy
+- Founder & Lead Consultant: Yashlok Singh
+- Primary Office: Nagpur, Maharashtra, India (Postal Code: 440001)
+- Geographic Operations: Nagpur, Vidarbha, Maharashtra, and Pan-India
+- Contact Telephone: +91 84215 04028
+- Official Email: desireconsultancy37@gmail.com
+- Website URL: https://desireconsultancy.in
+- Sitemaps: https://desireconsultancy.in/sitemap.xml
+- Full Knowledge Base: https://desireconsultancy.in/llms-full.txt
+
+## Key URLs for LLMs & AI Agents
+
+- Homepage: https://desireconsultancy.in/
+- FSSAI Guide: https://desireconsultancy.in/fssai-certification
+- BIS Guide: https://desireconsultancy.in/bis-certification
+- Packaged Water Guide: https://desireconsultancy.in/services/packaged-drinking-water
+- RO Solutions Guide: https://desireconsultancy.in/services/ro-solutions
+- Trademark Guide: https://desireconsultancy.in/trademark-registration
+- Compliance Articles & Insights: https://desireconsultancy.in/blog

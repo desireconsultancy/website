@@ -32,6 +32,9 @@ const BlogPage = lazy(() =>
 const TrademarkPage = lazy(() =>
   import('../pages/TrademarkPage').then((m) => ({ default: m.TrademarkPage })),
 );
+const NotFoundPage = lazy(() =>
+  import('../pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
+);
 
 /** Track SPA page views on each route change */
 function PageTracker() {
@@ -78,7 +81,7 @@ export function AppRouter() {
             <Route path="/contact" element={<Navigate to="/#contact" replace />} />
 
             {/* 404 fallback */}
-            <Route path="*" element={<App />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

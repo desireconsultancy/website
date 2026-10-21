@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { SubpageLayout } from '../layouts/SubpageLayout';
 
 export function PrivacyPolicyPage() {
   return (
-    <>
+    <SubpageLayout>
       <Helmet>
-        <title>Privacy Policy | Desire Consultancy — Nagpur</title>
+        <title>Privacy Policy | Desire Consultancy — Mumbai</title>
         <meta
           name="description"
           content="Privacy Policy for Desire Consultancy. Learn how we collect, use, and protect your information when using our regulatory compliance services."
@@ -14,8 +15,8 @@ export function PrivacyPolicyPage() {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <div className="min-h-screen bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="text-white">
+        <div className="max-w-4xl mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <nav className="text-[10px] font-mono text-white/30 tracking-wider mb-12" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-[#16D9C5] transition-colors">Home</Link>
@@ -95,7 +96,7 @@ export function PrivacyPolicyPage() {
           </div>
         </div>
       </div>
-    </>
+    </SubpageLayout>
   );
 }
 export default PrivacyPolicyPage;

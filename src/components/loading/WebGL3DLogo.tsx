@@ -280,9 +280,10 @@ export function WebGL3DLogo({ className = '', ref }: WebGL3DLogoProps) {
 
       // 60FPS Draw loop — use a local variable (not a React ref) so cleanup
       // always cancels the exact frame ID that was scheduled on this mount.
+      let isMounted = true;
       let animFrameId: number | null = null;
       const draw = () => {
-        if (!uniforms.current.active) return;
+        if (!isMounted || !uniforms.current.active) return;
         drawSingleFrame();
         animFrameId = requestAnimationFrame(draw);
       };
@@ -291,6 +292,7 @@ export function WebGL3DLogo({ className = '', ref }: WebGL3DLogoProps) {
       const img = new Image();
       img.src = '/logo.webp';
       img.onload = () => {
+        if (!isMounted) return;
         gl.bindTexture(gl.TEXTURE_2D, texture);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
         drawSingleFrame();
@@ -301,10 +303,13 @@ export function WebGL3DLogo({ className = '', ref }: WebGL3DLogoProps) {
       };
 
       return () => {
+        isMounted = false;
         if (animFrameId !== null) cancelAnimationFrame(animFrameId);
         gl.deleteBuffer(positionBuffer);
         gl.deleteTexture(texture);
         gl.deleteProgram(program);
+        gl.deleteShader(vs);
+        gl.deleteShader(fs);
       };
     }, [shouldReduceMotion]);
 

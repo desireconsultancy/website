@@ -45,11 +45,13 @@ export function ContactSection() {
     setErrorMessage('');
 
     try {
+      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
       const response = await fetch(EDGE_FN_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          apikey: import.meta.env.VITE_SUPABASE_ANON_KEY as string,
+          apikey: anonKey,
+          Authorization: `Bearer ${anonKey}`,
         },
         body: JSON.stringify(formData),
       });
@@ -150,10 +152,10 @@ export function ContactSection() {
             <div className="flex flex-col gap-1">
               <span className="text-[9px] text-white/30 uppercase">EMAIL</span>
               <a
-                href="mailto:desireconsultancy37@gmail.com"
+                href="mailto:support@desireconsultancy.in"
                 className="hover:text-[#16D9C5] transition-colors duration-300"
               >
-                desireconsultancy37@gmail.com
+                support@desireconsultancy.in
               </a>
             </div>
 

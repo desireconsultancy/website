@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import type { WebGL3DLogoRef } from './WebGL3DLogo';
@@ -23,8 +23,28 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
   const gridOverlayRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const fragmentsContainerRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const [percent, setPercent] = useState(0);
+
+  const handleSkip = useCallback(() => {
+    sessionStorage.setItem('dc_intro_played', 'true');
+    if (timelineRef.current) {
+      timelineRef.current.progress(1);
+    } else {
+      onComplete();
+    }
+  }, [onComplete]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleSkip();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleSkip]);
 
   // Define 4 quadrants for CSS fragment assembly
   const fragments = [
@@ -54,9 +74,11 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
 
       const tl = gsap.timeline({
         onComplete: () => {
+          sessionStorage.setItem('dc_intro_played', 'true');
           onComplete();
         },
       });
+      timelineRef.current = tl;
 
       // --- INITIAL STATE ---
       gsap.set('.logo-fragment-png', {
@@ -254,6 +276,16 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
       ref={containerRef}
       className="fixed inset-0 bg-black z-40 overflow-hidden flex flex-col items-center justify-center pointer-events-none"
     >
+      {/* Interactive Skip Button */}
+      <button
+        type="button"
+        onClick={handleSkip}
+        className="pointer-events-auto absolute top-6 right-6 px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-mono tracking-widest text-white/40 hover:text-white hover:border-white/30 uppercase transition-all duration-300 backdrop-blur-sm z-50 cursor-pointer"
+        aria-label="Skip introduction animation"
+      >
+        Skip ✕
+      </button>
+
       <div className="flex flex-col items-center justify-center gap-14 select-none relative">
         {/* Scene 3: Circular Outline behind the logo (Symmetrical Guidelines) */}
         <div
@@ -309,9 +341,9 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
           ref={brandTextRef}
           className="flex flex-col items-center gap-4 absolute bottom-[-130px] z-10"
         >
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-[0.55em] text-white font-display uppercase">
+          <div className="text-2xl sm:text-3xl font-bold tracking-[0.55em] text-white font-display uppercase">
             DESIRE CONSULTANCY
-          </h1>
+          </div>
           <p className="text-[10px] tracking-[0.62em] text-white/40 uppercase font-sans">
             FSSAI • BIS • WATER SOLUTIONS
           </p>

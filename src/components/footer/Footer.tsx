@@ -85,23 +85,28 @@ export function Footer() {
             </span>
             <ul className="space-y-2 text-[11px] sm:text-xs tracking-wider text-white/50 font-mono">
               <li>
-                <a href="#services" className="hover:text-white transition-colors duration-300">
+                <a href="/fssai-certification" className="hover:text-white transition-colors duration-300">
                   FSSAI Licensing
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors duration-300">
+                <a href="/bis-certification" className="hover:text-white transition-colors duration-300">
                   BIS Certification
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors duration-300">
+                <a href="/services/packaged-drinking-water" className="hover:text-white transition-colors duration-300">
                   Water Plants Setup
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors duration-300">
-                  Industrial RO Solutions
+                <a href="/services/ro-solutions" className="hover:text-white transition-colors duration-300">
+                  Industrial RO Systems
+                </a>
+              </li>
+              <li>
+                <a href="/trademark-registration" className="hover:text-white transition-colors duration-300">
+                  Trademark Protection
                 </a>
               </li>
             </ul>
@@ -110,27 +115,32 @@ export function Footer() {
           {/* COLUMN 3: COMPANY LINKS */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             <span className="text-[10px] tracking-[0.25em] text-[#16D9C5] font-mono font-medium uppercase">
-              COMPANY
+              RESOURCES
             </span>
             <ul className="space-y-2 text-[11px] sm:text-xs tracking-wider text-white/50 font-mono">
               <li>
-                <a href="#founder" className="hover:text-white transition-colors duration-300">
+                <a href="/#founder" className="hover:text-white transition-colors duration-300">
                   About Founder
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-white transition-colors duration-300">
+                <a href="/#process" className="hover:text-white transition-colors duration-300">
                   Our Process
                 </a>
               </li>
               <li>
-                <a href="#cases" className="hover:text-white transition-colors duration-300">
-                  Success Stories
+                <a href="/blog" className="hover:text-white transition-colors duration-300">
+                  Compliance Blog
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors duration-300">
-                  Get In Touch
+                <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms-and-conditions" className="hover:text-white transition-colors duration-300">
+                  Terms of Service
                 </a>
               </li>
             </ul>
@@ -154,10 +164,10 @@ export function Footer() {
               <p>
                 Email:{' '}
                 <a
-                  href="mailto:desireconsultancy37@gmail.com"
+                  href="mailto:support@desireconsultancy.in"
                   className="hover:text-white transition-colors duration-300"
                 >
-                  desireconsultancy37@gmail.com
+                  support@desireconsultancy.in
                 </a>
               </p>
               <p>Hours: Mon - Sat (9 AM - 6 PM)</p>

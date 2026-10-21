@@ -6,6 +6,7 @@ interface ServiceItem {
   number: string;
   title: string;
   description: string;
+  path: string;
   accent: 'blue' | 'teal';
 }
 
@@ -16,6 +17,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: 'FSSAI Licensing',
     description:
       'Assistance with new licenses, renewals, modifications, state licenses, and central licenses.',
+    path: '/fssai-certification',
     accent: 'blue',
   },
   {
@@ -24,6 +26,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: 'BIS Certification',
     description:
       'Support for BIS certification, compliance requirements, documentation, and approval processes.',
+    path: '/bis-certification',
     accent: 'teal',
   },
   {
@@ -32,6 +35,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: 'Packaged Drinking Water Plants',
     description:
       'Consultancy for packaged drinking water units including approvals, documentation, inspections, and setup guidance.',
+    path: '/services/packaged-drinking-water',
     accent: 'blue',
   },
   {
@@ -40,6 +44,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: 'Industrial RO Solutions',
     description:
       'Consultancy and compliance support for industrial and commercial RO water treatment systems.',
+    path: '/services/ro-solutions',
     accent: 'teal',
   },
 ];
@@ -144,9 +149,9 @@ export function ServicesSection() {
                 </p>
               </div>
 
-              {/* Action CTA link (refined and restrained Apple style) */}
+              {/* Action CTA link leading to dedicated service page */}
               <a
-                href={`#contact`}
+                href={service.path}
                 className="inline-flex items-center gap-1.5 text-[10px] tracking-[0.2em] text-[#16D9C5] font-semibold uppercase mt-8 hover:text-white transition-colors duration-300 self-start"
               >
                 Learn More{' '}
