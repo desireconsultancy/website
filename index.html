@@ -7,26 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desire Consultancy | FSSAI, BIS &amp; Packaged Water Plant Setup Experts — Mumbai</title>
 
-    <!-- Google Analytics 4 (dynamically loaded when valid ID is configured) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWCZEXBCRK"></script>
     <script>
-      (function() {
-        var gaId = "%VITE_GA4_MEASUREMENT_ID%";
-        if (gaId && gaId.indexOf("%") === -1 && gaId !== "G-XXXXXXXXXX") {
-          var script = document.createElement("script");
-          script.async = true;
-          script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(gaId);
-          document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', gaId, {
-            page_path: window.location.pathname,
-            send_page_view: true
-          });
-        }
-      })();
+      gtag('config', 'G-CWCZEXBCRK');
     </script>
 
     <!-- Microsoft Clarity (dynamically loaded when valid ID is configured) -->
